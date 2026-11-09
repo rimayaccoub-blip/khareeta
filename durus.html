@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>دروس خريطة تهيئة العميل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','914783969729003');fbq('track','PageView');fbq('track','ViewContent',{content_name:'khareeta-durus'});
+if (/[?&]reg=1/.test(location.search)) { fbq('track','Lead',{content_name:'khareeta-series'}); }
+</script>
+<style>
+:root{--bg:#faf6ef;--card:#fffdf9;--line:#e7dfd2;--soft:#e6f0ef;--teal:#0f6b6e;--teal-dark:#0a5154;--ink:#1f2a2e;--muted:#5f6b6e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{padding:26px 0 14px}
+header h1{font-size:28px;color:var(--teal);line-height:1.3}
+header p{color:var(--muted);font-size:16px;margin-top:4px}
+.layout{display:grid;grid-template-columns:1fr;gap:22px;padding-bottom:40px}
+@media(min-width:960px){.layout{grid-template-columns:1.7fr 1fr;align-items:start}.side{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}}
+.player{background:#000;border-radius:16px;overflow:hidden;box-shadow:0 14px 34px rgba(31,42,46,.15)}
+.player video{width:100%;display:block;aspect-ratio:16/10;background:#000}
+.now{padding:16px 2px}
+.now .tag{font-size:14px;color:var(--teal);font-weight:700}
+.now h2{font-size:24px;line-height:1.35;margin:2px 0 6px}
+.now p{color:var(--muted);font-size:16px}
+.nav{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--teal);color:#fff;border:0;font:inherit;font-weight:700;font-size:16px;padding:11px 20px;border-radius:12px;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn:disabled{opacity:.4;cursor:default}
+.progress{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:15px}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.part-title{font-size:15px;font-weight:700;color:var(--teal);margin:14px 4px 8px}
+.lesson{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:8px;margin-bottom:8px;cursor:pointer;text-align:right;width:100%;font:inherit;color:inherit}
+.lesson:hover{border-color:#bcd6d4}
+.lesson.active{border-color:var(--teal);background:var(--soft)}
+.lesson img{border-radius:9px;aspect-ratio:16/10;object-fit:cover;width:96px}
+.lesson b{display:block;font-size:15.5px;line-height:1.4}
+.lesson small{color:var(--muted);font-size:13px}
+.lesson .ok{color:var(--teal);font-weight:700}
+.focus{background:var(--teal);color:#fff;border-radius:20px;padding:28px 24px;margin:8px 0 40px}
+.focus h3{font-size:24px;line-height:1.4;margin-bottom:10px}
+.focus p{margin-bottom:6px;opacity:.95}
+.focus .btn{background:#fff;color:var(--teal);font-size:18px;padding:14px 26px;margin-top:14px}
+.done-btn{display:block;width:100%;margin-top:16px;background:#1f9d55;font-size:18px;padding:14px 20px}
+.done-btn.is-done{background:var(--soft);color:var(--teal-dark);cursor:default}
+.done-note{font-size:14px;color:var(--muted);margin-top:8px;min-height:20px}
+.lesson.locked{opacity:.5;cursor:not-allowed}
+.lesson .lock{font-size:13px;color:var(--muted)}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+.pulse{animation:pulse .7s ease 3}
+footer{text-align:center;font-size:13px;color:var(--muted);padding:10px 0 30px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>خريطة تهيئة العميل</h1>
+    <p>9 دروس قصيرة. ابدأ من الأول، وكل درس بيبني على اللي قبله.</p>
+  </header>
+
+  <div class="layout">
+    <main>
+      <div class="player"><video id="vid" controls playsinline preload="metadata"></video></div>
+      <div class="now">
+        <div class="tag" id="nowTag"></div>
+        <h2 id="nowTitle"></h2>
+        <p id="nowDesc"></p>
+        <button class="btn done-btn" id="doneBtn">✓ خلّصت الدرس، افتحلي الجاي</button>
+        <p class="done-note" id="doneNote"></p>
+        <div class="nav">
+          <button class="btn ghost" id="prevBtn">→ الدرس اللي قبل</button>
+          <button class="btn ghost" id="nextBtn">الدرس الجاي ←</button>
+        </div>
+      </div>
+
+      <div class="focus" id="focus">
+        <h3>بدك نطبّق الخريطة على البزنس تبعك؟</h3>
+        <p>احجز جلسة مجانية لفحص الفجوة.</p>
+        <p>بنشوف سوا وين بالزبط بيوقف العميل عندك، وشو الخطوة الجاي اللي بتحرّك الدخل، وإذا في مسار مناسب إلك.</p>
+        <a class="btn" href="https://rimayaqub-strategy-check.netlify.app/?src=khareeta-durus" target="_blank" rel="noopener" id="focusBtn">احجز جلستك المجانية 👈</a>
+      </div>
+    </main>
+
+    <aside class="side">
+      <div class="progress"><span id="progText"></span><div class="bar"><i id="progBar"></i></div></div>
+      <div id="list"></div>
+    </aside>
+  </div>
+</div>
+<footer>© ريما يعقوب · مدربة ومستشارة أعمال</footer>
+
+<script>
+(function(){
+  var PARTS = ['الجزء الأول: ليش المحتوى ما بيبيع','الجزء الثاني: الخريطة','الجزء الثالث: الأدوات'];
+  var L = [
+    {p:0,t:'اللايك مش زبون',d:'المحتوى مش هو التسويق، هو درجة من بناء الثقة. وليش اللايك والسيف ما بيعنوا إنه الشخص جاهز يشتري.',m:'8:32'},
+    {p:0,t:'الخسارة اللي ما حدا بيحسبها',d:'وين بيضيع العميل لما الرسالة عامة، وشو بيكلفك هاد بالوقت والطاقة والثقة. وقصة المستشارة كاملة.',m:'5:25'},
+    {p:0,t:'3 أسباب بيستفيدوا وما بيشتروا',d:'حل صغير بدون الحل الكامل، ما في خطوة واضحة، وما في طريق من السؤال للعرض. وكيف تفحص إذا رسالتك عم توصل.',m:'10:19'},
+    {p:1,t:'من "هاي مشكلتي" لـ"بدي الحل"',d:'المراحل 1 لـ3 من الخريطة، على مثال مستشارة زوجية من البداية للنهاية.',m:'8:12'},
+    {p:1,t:'ليش ما بتبيع 10 جلسات لحدا لسا شافك',d:'المرحلتين 4 و5: الثقة بملاءمة الخدمة، وشو لازم يفهم العميل قبل ما يقيّم الاستثمار.',m:'6:20'},
+    {p:1,t:'الحلم القريب',d:'مثال حي: تدريب الإلقاء. ليش بنبيع الخطوة القريبة قبل الحلم البعيد، وقصة عميلة وصلت لهدفها.',m:'7:47'},
+    {p:1,t:'كلمة وحدة: حدود',d:'مثال حي: مستشارة أهل. المحتوى اللي بيجذب، كيف بتبني ثقة، والدعوة اللي بتطلّع العميل من السوشال ميديا.',m:'6:46'},
+    {p:2,t:'5 مغناطيسات بتجيب العميل المناسب',d:'5 أنواع Lead Magnet، والقاعدة: جمهور واحد، خدمة وحدة، مشكلة وحدة.',m:'6:03'},
+    {p:2,t:'3 درجات: من المجاني لخدمتك المركزية',d:'الدرجة الأولى المدفوعة، المسار الكامل، وليش المشكلة غالبًا مش بالبيع.',m:'6:35'}
+  ];
+  var KEY = 'khareeta_done_v1', UKEY = 'khareeta_unlock_v1', done = {}, linkMax = 0;
+  try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(_) { done = {}; }
+  try { linkMax = parseInt(localStorage.getItem(UKEY) || '0', 10) || 0; } catch(_) { linkMax = 0; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(done)); localStorage.setItem(UKEY, String(linkMax)); } catch(_) {} }
+  function pad(i){ return (i < 9 ? '0' : '') + (i + 1); }
+  function unlocked(i){ return i === 0 || !!done[i - 1] || i <= linkMax; }
+
+  var vid = document.getElementById('vid'), list = document.getElementById('list'), cur = 0;
+  var doneBtn = document.getElementById('doneBtn'), note = document.getElementById('doneNote');
+
+  function renderList(){
+    var h = '', lastP = -1;
+    L.forEach(function(x, i){
+      if (x.p !== lastP) { h += '<div class="part-title">' + PARTS[x.p] + '</div>'; lastP = x.p; }
+      var open = unlocked(i);
+      h += '<button class="lesson' + (i === cur ? ' active' : '') + (open ? '' : ' locked') + '" data-i="' + i + '">' +
+           '<img src="v/l' + pad(i) + '.jpg" alt="" loading="lazy">' +
+           '<span><b>' + (i + 1) + '. ' + x.t + '</b><small>' + x.m + ' دقيقة' +
+           (done[i] ? ' · <span class="ok">✓ خلّصته</span>' : (open ? '' : ' · <span class="lock">🔒 بيفتح بعد الدرس اللي قبله</span>')) +
+           '</small></span></button>';
+    });
+    list.innerHTML = h;
+    var n = Object.keys(done).length;
+    document.getElementById('progText').textContent = 'خلّصت ' + n + ' من 9 دروس';
+    document.getElementById('progBar').style.width = (n / 9 * 100) + '%';
+  }
+  function renderControls(){
+    var last = cur === L.length - 1;
+    if (done[cur]) {
+      doneBtn.textContent = last ? '✓ خلّصت الدورة كاملة' : '✓ خلّصته، الدرس الجاي صار مفتوح';
+      doneBtn.classList.add('is-done');
+    } else {
+      doneBtn.textContent = last ? '✓ خلّصت الدرس الأخير' : '✓ خلّصت الدرس';
+      doneBtn.classList.remove('is-done');
+    }
+    document.getElementById('prevBtn').disabled = cur === 0;
+    document.getElementById('nextBtn').disabled = last || !unlocked(cur + 1);
+    note.textContent = (!last && !unlocked(cur + 1)) ? 'لما تخلّص الدرس، اضغط على الزر الأخضر وبيفتحلك الدرس الجاي.' : (!last && done[cur] ? 'اضغط «الدرس الجاي» لما تكون جاهز.' : '');
+    document.getElementById('nextBtn').classList.toggle('ghost', !(done[cur] && !last));
+  }
+  function load(i, play){
+    i = Math.max(0, Math.min(L.length - 1, i));
+    if (!unlocked(i)) { note.textContent = 'هاد الدرس بيفتح بعد ما تخلّص الدرس اللي قبله.'; return; }
+    cur = i;
+    var x = L[cur];
+    vid.src = 'v/l' + pad(cur) + '.mp4';
+    vid.poster = 'v/l' + pad(cur) + '.jpg';
+    document.getElementById('nowTag').textContent = 'الدرس ' + (cur + 1) + ' من 9 · ' + PARTS[x.p];
+    document.getElementById('nowTitle').textContent = x.t;
+    document.getElementById('nowDesc').textContent = x.d;
+    renderList();
+    renderControls();
+    if (play) { vid.play().catch(function(){}); window.scrollTo({top:0,behavior:'smooth'}); }
+    try { history.replaceState(null, '', '?l=' + (cur + 1)); } catch(_) {}
+  }
+  list.addEventListener('click', function(e){
+    var b = e.target.closest('.lesson'); if (b) load(+b.dataset.i, false);
+  });
+  document.getElementById('prevBtn').onclick = function(){ load(cur - 1, false); window.scrollTo({top:0,behavior:'smooth'}); };
+  document.getElementById('nextBtn').onclick = function(){ load(cur + 1, false); window.scrollTo({top:0,behavior:'smooth'}); };
+  doneBtn.onclick = function(){
+    if (!done[cur]) {
+      done[cur] = 1; save();
+      if (window.fbq) fbq('trackCustom','LessonDone',{lesson: cur + 1});
+    }
+    renderList(); renderControls();
+    if (cur === L.length - 1) document.getElementById('focus').scrollIntoView({behavior:'smooth'});
+  };
+  vid.addEventListener('ended', function(){
+    if (done[cur]) return;
+    doneBtn.scrollIntoView({behavior:'smooth', block:'center'});
+    doneBtn.classList.remove('pulse'); void doneBtn.offsetWidth; doneBtn.classList.add('pulse');
+  });
+  document.getElementById('focusBtn').addEventListener('click', function(){
+    if (window.fbq) fbq('trackCustom','FreeCallClick',{from:'khareeta-durus'});
+  });
+
+  var start = parseInt(new URLSearchParams(location.search).get('l'), 10);
+  if (!isNaN(start) && start - 1 > linkMax) { linkMax = Math.min(start - 1, L.length - 1); save(); }
+  var first = 0;
+  while (first < L.length - 1 && done[first] && unlocked(first + 1)) first++;
+  load(isNaN(start) ? first : start - 1, false);
+})();
+</script>
+</body>
+</html>
